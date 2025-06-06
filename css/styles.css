@@ -92,3 +92,15 @@ header {
 .sidebar ul li a:hover {
   background-color: rgba(47, 128, 237, 0.2);
 }
+
+/* Rodapé */
+
+footer {
+  background-color: #2f80ed;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
