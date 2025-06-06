@@ -1,18 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
+    <title>HelpUp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="./css/styles.css"
-    />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <script
+      src="https://kit.fontawesome.com/e7b202391b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
+    <!-- Header -->
+
+    <header>
+      <button class="menu__btn" onclick="toggleMenu()">&#9776;</button>
+      <div class="logo">
+        <h1 class="titulo">HelpUp</h1>
+      </div>
+    </header>
+
+    <!-- Menu Hamburguer -->
+
+    <nav id="sidebar" class="sidebar">
+      <button class="close__btn" onclick="closeMenu()">✖</button>
+      <ul>
+        <li>
+          <a href="index.html"><i class="fa-solid fa-house"></i> Início</a>
+        </li>
+        <li><a href="cadastro.html">Cadastrar Necessidade</a></li>
+        <li><a href="necessidades.html">Ver Necessidades</a></li>
+      </ul>
+    </nav>
+
+    <!-- Scripts -->
     <script src="./javaScript/main.js"></script>
   </body>
 </html>
