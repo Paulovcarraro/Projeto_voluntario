@@ -150,3 +150,15 @@ header {
 .formulario .btn:hover {
   background-color: #1f5fbf;
 }
+
+/* Footer */
+
+footer {
+  background-color: #2f80ed;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
