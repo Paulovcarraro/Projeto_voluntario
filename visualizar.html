@@ -1,18 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="./css/visualizar.css"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizar Necessidades</title>
+    <link rel="stylesheet" href="./css/visualizar.css" />
+    <script
+      src="https://kit.fontawesome.com/e7b202391b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+    <header>
+      <button class="menu__btn" onclick="toggleMenu()">&#9776;</button>
+      <div>
+        <h1 class="titulo">Necessidades Cadastradas</h1>
+      </div>
+    </header>
+
+    <nav id="sidebar" class="sidebar">
+      <button class="close__btn" onclick="closeMenu()">✖</button>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="cadastro.html">Cadastrar Necessidade</a></li>
+        <li><a href="necessidades.html">Ver Necessidades</a></li>
+      </ul>
+    </nav>
+
+    <main class="main__visualizar">
+      <section class="filtros">
+        <input
+          type="text"
+          id="busca"
+          placeholder="Buscar por título ou descrição..."
+        />
+        <select id="filtro">
+          <option value="">Todos os tipos</option>
+          <option value="Educação">Educação</option>
+          <option value="Saúde">Saúde</option>
+          <option value="Meio Ambiente">Meio Ambiente</option>
+          <option value="Doação de Alimentos">Doação de Alimentos</option>
+          <option value="Doação de Roupas">Doação de Roupas</option>
+          <option value="Outros">Outros</option>
+        </select>
+      </section>
+
+      <section id="lista-necessidades" class="cards__container">
+        <!-- Cards dinâmicos serão inseridos aqui -->
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ConectaONG - Todos os direitos reservados.</p>
+    </footer>
+
     <script src="./javaScript/visualizar.js"></script>
   </body>
 </html>
