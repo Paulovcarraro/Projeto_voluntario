@@ -140,6 +140,7 @@ header {
 
 .action-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(47, 128, 237, 0.4);
 }
 
 .action-card h2 {
@@ -186,7 +187,6 @@ header {
   text-align: justify;
   max-width: 600px;
   margin: 0 auto;
-
 
   padding-left: 0;
   color: #333;
