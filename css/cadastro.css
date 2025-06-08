@@ -1,4 +1,5 @@
 /* Reset e base */
+
 * {
   margin: 0;
   padding: 0;
@@ -137,9 +138,14 @@ header {
 }
 
 .formulario .btn {
-  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #2f80ed;
   color: white;
+  font-size: medium;
+  font-weight: 600;
+  margin: 10px 0;
   padding: 0.6rem 1.2rem;
   border: none;
   border-radius: 5px;
@@ -158,7 +164,6 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
