@@ -104,7 +104,20 @@ header {
   text-align: center;
 }
 
-/* Cards */
+/*  Estilização da mensagem antes dos cards */
+
+.explicacao__cards {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.explicacao__cards h3 {
+  font-size: 1.2rem;
+  color: #2f80ed;
+  margin-bottom: 10px;
+}
+
+/*  Estilização dos Cards */
 
 .card-container {
   display: flex;
@@ -153,19 +166,37 @@ header {
   background-color: #1e5fbf;
 }
 
-/* Footer */
+/* Estilização da seção "Como funciona" */
 
-footer {
-  background-color: #2f80ed;
-  color: white;
+.como__funciona {
+  background-color: #e6f0ff;
+  padding: 30px;
   text-align: center;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  margin-top: 2rem;
 }
 
-/* Rodapé */
+.como__funciona h2 {
+  color: #1e5fbf;
+  margin-bottom: 20px;
+}
+
+.como__funciona ol {
+  list-style-position: inside;
+
+  text-align: justify;
+  max-width: 600px;
+  margin: 0 auto;
+
+
+  padding-left: 0;
+  color: #333;
+}
+
+.como__funciona li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
 
 footer {
   background-color: #2f80ed;
