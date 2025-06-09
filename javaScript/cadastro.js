@@ -1,5 +1,4 @@
-// Script para funcionamento no menu hamburguer
-
+// ───────────── MENU HAMBÚRGUER ─────────────
 function toggleMenu() {
   document.getElementById("sidebar").classList.add("active");
 }
@@ -8,20 +7,15 @@ function closeMenu() {
   document.getElementById("sidebar").classList.remove("active");
 }
 
-// Função para fechar o menu ao clicar fora dele
-
-document.addEventListener("click", function (event) {
+// Fecha o menu ao clicar fora dele
+document.addEventListener("click", (event) => {
   const sidebar = document.getElementById("sidebar");
   const hamburger = document.querySelector(".menu__btn");
 
-  const clickedOutsideSidebar = !sidebar.contains(event.target);
-  const clickedOutsideHamburger = !hamburger.contains(event.target);
+  const foraSidebar = !sidebar.contains(event.target);
+  const foraHamburger = !hamburger.contains(event.target);
 
-  if (
-    sidebar.classList.contains("active") &&
-    clickedOutsideSidebar &&
-    clickedOutsideHamburger
-  ) {
+  if (sidebar.classList.contains("active") && foraSidebar && foraHamburger) {
     closeMenu();
   }
 });
