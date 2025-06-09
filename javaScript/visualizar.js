@@ -1,9 +1,32 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const container   = document.getElementById("lista-necessidades");
-  const inputBusca  = document.getElementById("busca");
-  const selectTipo  = document.getElementById("filtro");
+// ───────────── MENU HAMBÚRGUER ─────────────
+function toggleMenu() {
+  document.getElementById("sidebar").classList.add("active");
+}
 
-  // Lê TODAS as necessidades cadastradas 
+function closeMenu() {
+  document.getElementById("sidebar").classList.remove("active");
+}
+
+// Fecha o menu ao clicar fora dele
+document.addEventListener("click", (event) => {
+  const sidebar = document.getElementById("sidebar");
+  const hamburger = document.querySelector(".menu__btn");
+
+  const foraSidebar = !sidebar.contains(event.target);
+  const foraHamburger = !hamburger.contains(event.target);
+
+  if (sidebar.classList.contains("active") && foraSidebar && foraHamburger) {
+    closeMenu();
+  }
+});
+
+// ──────────── Função para puxar os dados preenchidos no formulário ────────────
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("lista-necessidades");
+  const inputBusca = document.getElementById("busca");
+  const selectTipo = document.getElementById("filtro");
+
+  // Lê TODAS as necessidades cadastradas
   const todasNecessidades =
     JSON.parse(localStorage.getItem("cadastroNecessidades")) || [];
 
@@ -23,8 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         n.titulo.toLowerCase().includes(termo) ||
         n.descricao.toLowerCase().includes(termo);
 
-      const tipoOk =
-        tipoSelecionado === "" || n.tipoAjuda === tipoSelecionado;
+      const tipoOk = tipoSelecionado === "" || n.tipoAjuda === tipoSelecionado;
 
       return textoOk && tipoOk;
     });
