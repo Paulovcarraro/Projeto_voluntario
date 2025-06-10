@@ -9,19 +9,22 @@ const limparFormulario = () => {
 const preencherFormulario = (end) => {
   document.getElementById("rua").value = end.logradouro;
   document.getElementById("bairro").value = end.bairro;
-  document.getElementById("cidade").value = end.localidade; 
+  document.getElementById("cidade").value = end.localidade;
   document.getElementById("estado").value = end.uf;
 };
 
 // ───────────── UTILITÁRIOS DE VALIDAÇÃO ─────────────
 const apenasNumero = (str) => /^\d+$/.test(str);
 const cepEhValido = (cep) => cep.length === 8 && apenasNumero(cep);
+const contatoEhValido = (contato) => {
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const regexTelefone = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/;
+  return regexEmail.test(contato) || regexTelefone.test(contato);
+};
 
 // ───────────── BUSCA CEP NA API ─────────────
 const pesquisarCep = async () => {
-  // Remove hífen antes de validar
   const cepLimpo = document.getElementById("cep").value.replace("-", "");
-
   limparFormulario();
 
   if (!cepEhValido(cepLimpo)) {
@@ -45,5 +48,4 @@ const pesquisarCep = async () => {
   }
 };
 
-// ───────────── DISPARA AO SAIR DO CAMPO CEP ─────────────
 document.getElementById("cep").addEventListener("focusout", pesquisarCep);

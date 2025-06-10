@@ -20,59 +20,93 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// ───────────── CE P :  F O R M A T A Ç Ã O ─────────────
+// ───────────── CEP: FORMATAÇÃO ─────────────
 const cepInput = document.getElementById("cep");
 
 cepInput.addEventListener("input", (e) => {
-  // Remove caracteres não numéricos
   let cep = e.target.value.replace(/\D/g, "");
-
-  // Limita a 8 dígitos
   cep = cep.substring(0, 8);
-
-  // Adiciona hífen se tiver mais de 5 dígitos
   if (cep.length > 5) {
     cep = `${cep.slice(0, 5)}-${cep.slice(5)}`;
   }
-
   e.target.value = cep;
 });
 
-// ───────────── ENVIO DO FORMULÁRIO ─────────────
-document.getElementById("formCadastro").addEventListener("submit", (e) => {
-  e.preventDefault(); // Impede envio padrão
+// ───────────── MODAL DE CONFIRMAÇÃO ─────────────
+const modalOverlay = document.getElementById("modalOverlay");
+const btnConfirmar = document.getElementById("btnConfirmar");
+const btnCancelar = document.getElementById("btnCancelar");
 
-  const cepValor = cepInput.value;
-  const regexCep = /^\d{5}-\d{3}$/;
+let dadosTemporarios = null;
 
-  // Validação do CEP já formatado
-  if (!regexCep.test(cepValor)) {
-    alert("Por favor, informe um CEP válido no formato 12345-678.");
-    cepInput.focus();
-    return;
-  }
+// ───────────── SUBMISSÃO COM VALIDAÇÃO + MODAL ─────────────
+document
+  .getElementById("formCadastro")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  // Captura os dados
-  const dados = {
-    instituicao: document.getElementById("instituicao").value.trim(),
-    tipoAjuda: document.getElementById("tipoAjuda").value,
-    titulo: document.getElementById("titulo").value.trim(),
-    descricao: document.getElementById("descricao").value.trim(),
-    cep: cepValor,
-    rua: document.getElementById("rua").value,
-    bairro: document.getElementById("bairro").value,
-    cidade: document.getElementById("cidade").value,
-    estado: document.getElementById("estado").value,
-    contato: document.getElementById("contato").value.trim(),
-  };
+    const instituicao = document.getElementById("instituicao").value.trim();
+    const tipoAjuda = document.getElementById("tipoAjuda").value;
+    const titulo = document.getElementById("titulo").value.trim();
+    const descricao = document.getElementById("descricao").value.trim();
+    const cep = cepInput.value.trim();
+    const contato = document.getElementById("contato").value.trim();
 
-  // Recupera lista existente ou cria nova
+    // Validações
+    if (
+      instituicao === "" ||
+      tipoAjuda === "" ||
+      titulo === "" ||
+      descricao === "" ||
+      cep === "" ||
+      contato === ""
+    ) {
+      alert("Por favor, preencha todos os campos obrigatórios.");
+      return;
+    }
+
+    const regexCep = /^\d{5}-\d{3}$/;
+    if (!regexCep.test(cep)) {
+      alert("Por favor, informe um CEP válido no formato 12345-678.");
+      cepInput.focus();
+      return;
+    }
+
+    if (!contatoEhValido(contato)) {
+      alert("Contato inválido. Informe um e-mail ou telefone válido.");
+      return;
+    }
+
+    // Guarda dados temporariamente
+    dadosTemporarios = {
+      instituicao,
+      tipoAjuda,
+      titulo,
+      descricao,
+      cep,
+      rua: document.getElementById("rua").value,
+      bairro: document.getElementById("bairro").value,
+      cidade: document.getElementById("cidade").value,
+      estado: document.getElementById("estado").value,
+      contato,
+    };
+
+    // Exibe o modal
+    modalOverlay.style.display = "flex";
+  });
+
+btnConfirmar.addEventListener("click", () => {
   const lista = JSON.parse(localStorage.getItem("cadastroNecessidades")) || [];
-  lista.push(dados);
+  lista.push(dadosTemporarios);
   localStorage.setItem("cadastroNecessidades", JSON.stringify(lista));
 
+  modalOverlay.style.display = "none";
   alert("Necessidade cadastrada com sucesso!");
 
-  // Redireciona para a página de visualização
+  history.replaceState(null, "", location.href);
   window.location.href = "./visualizar.html";
+});
+
+btnCancelar.addEventListener("click", () => {
+  modalOverlay.style.display = "none";
 });
