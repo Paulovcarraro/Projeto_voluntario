@@ -1,20 +1,23 @@
 /* Reset e base */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilização do corpo da página */
+/* Layout geral */
 
 body {
   font-family: "Segoe UI", sans-serif;
   background-color: #f2f2f2;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Cabeçalho */
-
 header {
   background-color: #2f80ed;
   padding: 1rem;
@@ -40,7 +43,7 @@ header {
   font-weight: bold;
 }
 
-/* Menu lateral (hambúrguer) */
+/* Menu lateral */
 
 .sidebar {
   position: fixed;
@@ -97,9 +100,12 @@ header {
   background-color: rgba(47, 128, 237, 0.2);
 }
 
+/* Conteúdo principal */
+
 .main__visualizar {
   padding: 2rem;
   margin-top: 1rem;
+  flex: 1;
 }
 
 .filtros {
@@ -116,6 +122,8 @@ header {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+/* Estilização dos Cards */
 
 .cards__container {
   display: grid;
@@ -140,15 +148,16 @@ header {
   margin: 0.3rem 0;
 }
 
+/* Footer */
+
 footer {
   background-color: #2f80ed;
   color: white;
   text-align: center;
   padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
+
+/* Responsividade*/
 
 @media (min-width: 768px) {
   .filtros {
