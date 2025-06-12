@@ -242,6 +242,23 @@ header {
   }
 }
 
+/* Modal de sucesso */
+
+.modal.sucesso {
+  animation: pulse 0.4s ease;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* Footer */
 
 footer {

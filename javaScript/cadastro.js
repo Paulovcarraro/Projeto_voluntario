@@ -7,11 +7,9 @@ function closeMenu() {
   document.getElementById("sidebar").classList.remove("active");
 }
 
-// Fecha o menu ao clicar fora dele
 document.addEventListener("click", (event) => {
   const sidebar = document.getElementById("sidebar");
   const hamburger = document.querySelector(".menu__btn");
-
   const foraSidebar = !sidebar.contains(event.target);
   const foraHamburger = !hamburger.contains(event.target);
 
@@ -22,7 +20,6 @@ document.addEventListener("click", (event) => {
 
 // ───────────── CEP: FORMATAÇÃO ─────────────
 const cepInput = document.getElementById("cep");
-
 cepInput.addEventListener("input", (e) => {
   let cep = e.target.value.replace(/\D/g, "");
   cep = cep.substring(0, 8);
@@ -32,66 +29,69 @@ cepInput.addEventListener("input", (e) => {
   e.target.value = cep;
 });
 
-// ───────────── MODAL DE CONFIRMAÇÃO ─────────────
+// ───────────── MODAIS ─────────────
 const modalOverlay = document.getElementById("modalOverlay");
 const btnConfirmar = document.getElementById("btnConfirmar");
 const btnCancelar = document.getElementById("btnCancelar");
 
+const modalSucesso = document.getElementById("modalSucesso");
+const btnVisualizar = document.getElementById("btnVisualizar");
+const btnVoltar = document.getElementById("btnVoltar");
+
 let dadosTemporarios = null;
 
 // ───────────── SUBMISSÃO COM VALIDAÇÃO + MODAL ─────────────
-document.getElementById("formCadastro").addEventListener("submit", function (e) {
-  e.preventDefault();
+document
+  .getElementById("formCadastro")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const instituicao = document.getElementById("instituicao").value.trim();
-  const tipoAjuda = document.getElementById("tipoAjuda").value;
-  const titulo = document.getElementById("titulo").value.trim();
-  const descricao = document.getElementById("descricao").value.trim();
-  const cep = cepInput.value.trim();
-  const contato = document.getElementById("contato").value.trim();
+    const instituicao = document.getElementById("instituicao").value.trim();
+    const tipoAjuda = document.getElementById("tipoAjuda").value;
+    const titulo = document.getElementById("titulo").value.trim();
+    const descricao = document.getElementById("descricao").value.trim();
+    const cep = cepInput.value.trim();
+    const contato = document.getElementById("contato").value.trim();
 
-  // Validações
-  if (
-    instituicao === "" ||
-    tipoAjuda === "" ||
-    titulo === "" ||
-    descricao === "" ||
-    cep === "" ||
-    contato === ""
-  ) {
-    alert("Por favor, preencha todos os campos obrigatórios.");
-    return;
-  }
+    if (
+      instituicao === "" ||
+      tipoAjuda === "" ||
+      titulo === "" ||
+      descricao === "" ||
+      cep === "" ||
+      contato === ""
+    ) {
+      alert("Por favor, preencha todos os campos obrigatórios.");
+      return;
+    }
 
-  const regexCep = /^\d{5}-\d{3}$/;
-  if (!regexCep.test(cep)) {
-    alert("Por favor, informe um CEP válido no formato 12345-678.");
-    cepInput.focus();
-    return;
-  }
+    const regexCep = /^\d{5}-\d{3}$/;
+    if (!regexCep.test(cep)) {
+      alert("Por favor, informe um CEP válido no formato 12345-678.");
+      cepInput.focus();
+      return;
+    }
 
-  if (!contatoEhValido(contato)) {
-    alert("Contato inválido. Informe um e-mail ou telefone válido.");
-    return;
-  }
+    if (!contatoEhValido(contato)) {
+      alert("Contato inválido. Informe um e-mail ou telefone válido.");
+      return;
+    }
 
-  // Guarda dados temporariamente
-  dadosTemporarios = {
-    instituicao,
-    tipoAjuda,
-    titulo,
-    descricao,
-    cep,
-    rua: document.getElementById("rua").value,
-    bairro: document.getElementById("bairro").value,
-    cidade: document.getElementById("cidade").value,
-    estado: document.getElementById("estado").value,
-    contato,
-  };
+    dadosTemporarios = {
+      instituicao,
+      tipoAjuda,
+      titulo,
+      descricao,
+      cep,
+      rua: document.getElementById("rua").value,
+      bairro: document.getElementById("bairro").value,
+      cidade: document.getElementById("cidade").value,
+      estado: document.getElementById("estado").value,
+      contato,
+    };
 
-  // Exibe o modal
-  modalOverlay.style.display = "flex";
-});
+    modalOverlay.style.display = "flex";
+  });
 
 // ───────────── CONFIRMAR ENVIO ─────────────
 btnConfirmar.addEventListener("click", () => {
@@ -100,21 +100,24 @@ btnConfirmar.addEventListener("click", () => {
   localStorage.setItem("cadastroNecessidades", JSON.stringify(lista));
 
   modalOverlay.style.display = "none";
-  alert("Necessidade cadastrada com sucesso!");
+  modalSucesso.style.display = "flex";
 
-  // Limpa o formulário
   document.getElementById("formCadastro").reset();
-  limparFormulario(); // Função que limpa os campos de endereço preenchidos via CEP
-
-  // Abre a página de visualização em nova aba
-  window.open("./visualizar.html", "_blank");
-
-  // Remove os dados do histórico para evitar que apareçam ao voltar
+  limparFormulario();
   history.replaceState(null, "", location.href);
+});
+
+// ───────────── BOTÕES DO MODAL DE SUCESSO ─────────────
+btnVisualizar.addEventListener("click", () => {
+  window.open("./visualizar.html", "_blank");
+  modalSucesso.style.display = "none";
+});
+
+btnVoltar.addEventListener("click", () => {
+  modalSucesso.style.display = "none";
 });
 
 // ───────────── CANCELAR ENVIO ─────────────
 btnCancelar.addEventListener("click", () => {
   modalOverlay.style.display = "none";
 });
-
