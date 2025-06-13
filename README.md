@@ -80,9 +80,9 @@ Projeto_voluntario/
 
 # css
 
-- **styles.css**
-- **cadastro.css**
-- **visualizar.css**
+- `styles.css`
+- `cadastro.css`
+- `visualizar.css`
 
 # javaScript
 
@@ -93,7 +93,7 @@ Projeto_voluntario/
 
 # Images
 
-- Imagens do projeto
+- `Imagens do projeto`
 
 ---
 
