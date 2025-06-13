@@ -37,7 +37,7 @@ Desenvolver uma plataforma intuitiva e responsiva onde instituições possam cad
 
 📷 **Imagem do Cadastro de Necessidades:**
 
-![Cadastro de Necessidades](caminho/da/imagem.png)
+![Página Inicial](./gifs/gif_pagina_inicial.gif)
 
 ---
 
@@ -52,7 +52,7 @@ Desenvolver uma plataforma intuitiva e responsiva onde instituições possam cad
 
 📷 **Imagem do Cadastro de Necessidades:**
 
-![Cadastro de Necessidades](caminho/da/imagem.png)
+![Cadastro de Necessidades](./gifs/pagina_cadastro.gif)
 
 ---
 
@@ -63,7 +63,7 @@ Desenvolver uma plataforma intuitiva e responsiva onde instituições possam cad
 
 📷 **Imagem da Página de Visualização:**
 
-![Visualização de Necessidades](caminho/da/imagem.png)
+![Visualização de Necessidades](./gifs/pagina-visualizar.gif)
 
 ---
 
@@ -107,6 +107,10 @@ Projeto_voluntario/
 - `validacao.js`
 - `visualizar.js`
 
+# gifs
+
+- `Contém os gifs inseridos no README.`
+
 ---
 
 ## 🧠 Boas Práticas Aplicadas
@@ -120,8 +124,6 @@ Projeto_voluntario/
 ---
 
 ## 👨‍💻 Autor
-
-Este projeto foi desenvolvido por estudantes de Engenharia de Software da Unicesumar:
 
 <table>
   <tr>
