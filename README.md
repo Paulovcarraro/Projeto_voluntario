@@ -71,7 +71,7 @@ Desenvolver uma plataforma intuitiva e responsiva onde instituições possam cad
 
 - **HTML5**
 - **CSS3**
-- **JavaScript (vanilla)**
+- **JavaScript**
 - **API ViaCEP**
 
 ---
