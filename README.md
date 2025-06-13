@@ -35,6 +35,12 @@ Desenvolver uma plataforma intuitiva e responsiva onde instituições possam cad
 - **Cards clicáveis** (como se fossem botões) redirecionando para página desejada e com breve explicação sobre elas.
 - Seção explicando de forma simples, como o site funciona.
 
+📷 **Imagem do Cadastro de Necessidades:**
+
+![Cadastro de Necessidades](caminho/da/imagem.png)
+
+---
+
 ### 📝 Cadastro de Necessidades
 
 - **Campos obrigatórios:** Nome da instituição, tipo de ajuda, título, descrição, CEP, endereço (autopreenchido via API), contato.
@@ -44,10 +50,20 @@ Desenvolver uma plataforma intuitiva e responsiva onde instituições possam cad
 - Modal de **confirmação** ao clicar no botão enviar.(O formulário e limpo todas as vezes que for confirmado seu envio)
 - Modal de **sucesso** ao confirmar o envio dos dados do formulário, com opções de se manter na página de cadastro ou prosseguir e visualizar sua necessidade cadastrada.
 
+📷 **Imagem do Cadastro de Necessidades:**
+
+![Cadastro de Necessidades](caminho/da/imagem.png)
+
+---
+
 ### 🔍 Visualização e Filtros
 
 - Exibição dinâmica das necessidades em **cards**.
 - Filtro por **tipo de ajuda** e campo de **busca por palavra-chave** (título ou descrição).
+
+📷 **Imagem da Página de Visualização:**
+
+![Visualização de Necessidades](caminho/da/imagem.png)
 
 ---
 
