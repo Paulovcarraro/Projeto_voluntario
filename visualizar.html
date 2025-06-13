@@ -4,19 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visualizar Necessidades</title>
+
     <link rel="stylesheet" href="./css/visualizar.css" />
+
     <script
       src="https://kit.fontawesome.com/e7b202391b.js"
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
+    <!-- Header -->
+
     <header>
       <button class="menu__btn" onclick="toggleMenu()">&#9776;</button>
       <div>
         <h1 class="titulo">Necessidades Cadastradas</h1>
       </div>
     </header>
+
+    <!-- Menu Hamburguer -->
 
     <nav id="sidebar" class="sidebar">
       <button class="close__btn" onclick="closeMenu()">✖</button>
@@ -27,6 +34,8 @@
       </ul>
     </nav>
 
+    <!-- filtros de Pesquisa -->
+
     <main class="main__visualizar">
       <section class="filtros">
         <input
@@ -34,6 +43,9 @@
           id="busca"
           placeholder="Buscar por título ou descrição..."
         />
+
+        <!-- Filtro de seleção do tipo da Necessidade -->
+
         <select id="filtro">
           <option value="">Todos os tipos</option>
           <option value="Educação">Educação</option>
@@ -45,14 +57,20 @@
         </select>
       </section>
 
+      <!-- Lista de Necessidades -->
+
       <section id="lista-necessidades" class="cards__container">
         <!-- Cards dinâmicos serão inseridos aqui -->
       </section>
     </main>
 
+    <!-- Footer -->
+
     <footer>
       <p>&copy; 2025 ConectaONG - Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Scripts -->
 
     <script src="./javaScript/visualizar.js"></script>
   </body>
