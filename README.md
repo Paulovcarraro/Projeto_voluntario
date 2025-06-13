@@ -107,10 +107,6 @@ Projeto_voluntario/
 - `validacao.js`
 - `visualizar.js`
 
-# Images
-
-- `Imagens do projeto`
-
 ---
 
 ## 🧠 Boas Práticas Aplicadas
