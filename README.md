@@ -1,4 +1,10 @@
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=LICENSE&message=UniCesumar&color=blue&labelColor=0a2540&style=for-the-badge"/>
+  <img src="https://img.shields.io/static/v1?label=STATUS&message=Finalizado&color=blue&labelColor=0a2540&style=for-the-badge"/>
+</p>
+
 # Projeto_voluntario
+
 
 Uma aplicação web desenvolvida com foco social para conectar ONGs e instituições sociais a voluntários interessados em contribuir com diferentes causas. O projeto visa tornar a captação de ajuda mais eficiente, organizada e acessível.
 
