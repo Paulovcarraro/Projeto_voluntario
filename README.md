@@ -5,8 +5,7 @@
 
 # Projeto_voluntario
 
-
-Uma aplicação web desenvolvida com foco social para conectar ONGs e instituições sociais a voluntários interessados em contribuir com diferentes causas. O projeto visa tornar a captação de ajuda mais eficiente, organizada e acessível.
+Uma aplicação web desenvolvida com foco social para conectar ONGs e instituições sociais a voluntários interessados em contribuir com diferentes causas. O projeto visa tornar a captação de ajuda mais eficiente, organizada e acessível. Site foi desenvolvido para uma ONG Ficticia, cujo nome é: `HelpUP`.
 
 🔗 **Acesse aqui a versão online:**  
 [https://paulovcarraro.github.io/Projeto_voluntario/](https://paulovcarraro.github.io/Projeto_voluntario/)
@@ -28,7 +27,6 @@ Desenvolver uma plataforma intuitiva e responsiva onde instituições possam cad
 - **Página de Visualização de Necessidades:** exibe, em formato de cards, todas as necessidades cadastradas, com opções de filtro e busca.
 - **Layout Responsivo:** adaptado para diferentes tamanhos de tela, incluindo celulares e tablets.
   **🍔 Menu Hambúrguer Personalizado:** todas as páginas do site contam com um menu hambúrguer azul translúcido, que aparece ao clicar no ícone no canto superior esquerdo. Ele facilita a navegação, permitindo que o usuário acesse qualquer página da plataforma de forma prática, mesmo em dispositivos móveis. Os botões internos do menu direcionam para todas as seções principais do site com fluidez e acessibilidade.
-
 - **Design Coeso:** cabeçalho e rodapé padronizados, com uso consistente de cores, fontes e espaçamento entre as páginas.
 
 ### 🌐 Página Inicial
@@ -72,6 +70,31 @@ Desenvolver uma plataforma intuitiva e responsiva onde instituições possam cad
 
 ## 📁 Estrutura do Projeto
 
+Projeto_voluntario/
+
+# Html
+
+- `index.html`
+- `cadastro.html`
+- `visualizar.html`
+
+# css
+
+- **styles.css**
+- **cadastro.css**
+- **visualizar.css**
+
+# javaScript
+
+- `main.js`
+- `cadastro.js`
+- `validacao.js`
+- `visualizar.js`
+
+# Images
+
+- Imagens do projeto
+
 ---
 
 ## 🧠 Boas Práticas Aplicadas
@@ -81,3 +104,20 @@ Desenvolver uma plataforma intuitiva e responsiva onde instituições possam cad
 - Semântica HTML aplicada corretamente.
 - Responsividade garantida com CSS.
 - Versionamento com histórico de commits claros e objetivos.
+
+---
+
+## 👨‍💻 Autor
+
+Este projeto foi desenvolvido por estudantes de Engenharia de Software da Unicesumar:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Paulovcarraro">
+        <img src="https://github.com/Paulovcarraro.png" width="100px;" alt="Foto do Paulo Vinicius"/><br />
+        <sub><b>Paulo Vinícius Carraro</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
